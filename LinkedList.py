@@ -1,5 +1,4 @@
 
-
 class Node(object):
     '''
     Creates a node with the data field and pointer for next node.
@@ -7,7 +6,6 @@ class Node(object):
     def __init__(self, data=None, nextnode=None):
         self.data = data
         self.nextnode = nextnode    
-
 
 class LinkedList(object):
     '''
@@ -54,7 +52,6 @@ class LinkedList(object):
         
         # print the new linked list
         self.printlist()
-                
         
     def remove(self, index):
         '''
@@ -63,12 +60,10 @@ class LinkedList(object):
         prev = None
         node = self.head
         i = 1
-        
         while(node != None ) and (i < index):
             prev = node
             node =node.nextnode
             i+=1
-            
         if prev is None:
             self.head = node.nextnode
         else:
@@ -76,7 +71,6 @@ class LinkedList(object):
         
         # print the new linked list        
         self.printlist()
-            
     
     def printlist(self):
         node = self.head
