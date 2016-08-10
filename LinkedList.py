@@ -1,3 +1,8 @@
+'''
+Ceration of Linked List using Python (2.7)
+author - Pabitra Kumar Pati
+'''
+
 
 class Node(object):
     '''

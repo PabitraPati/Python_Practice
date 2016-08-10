@@ -1,3 +1,11 @@
+'''
+Code to make pyramid
+
+Works for both Python 2.7 and 3.4
+
+author - Pabitra Kumar Pati
+'''
+
 import sys
 
 class Pyramid:
@@ -10,19 +18,15 @@ class Pyramid:
         pyramid best shown with height 9
         """
         height = int(height)
-        #row = column = 1
         for row in range(1, height+1, 1):
             i = 1
             j = row-1
             for column in range(1, (height-row)+1, 1):
                 sys.stdout.write('   ')
             for column in range((height-row)+1, height+1, 1):
-                #i = 1
                 sys.stdout.write(str(i) + '  ')
                 i+=1
-            #j = i-2
             for column in range(height+1, height+row, 1):
-                #j = row-1
                 sys.stdout.write(str(j) + '  ')
                 j-=1
             sys.stdout.write('\n')
@@ -32,6 +36,7 @@ class Pyramid:
         Makes the complete pyramid (both up and down)
         '''
         height = int(height)
+        print ("Complete Pyramid :- ")
 
         # call make_pyramid to make upper pyramid
         self.make_pyramid(height)
@@ -39,24 +44,21 @@ class Pyramid:
         for row in range(height-1, 0, -1):
             i = 1
             j = row-1
-            #print row
             for column in range(1, (height-row)+1, 1):
-                #print column
                 sys.stdout.write('   ')
             for column in range((height-row)+1, height+1, 1):
-                #print column
                 sys.stdout.write(str(i) + '  ')
                 i+=1
             j = i-2
             for column in range(height+1, height+row, 1):
-                #print column
                 sys.stdout.write(str(j) + '  ')
                 j-=1
             sys.stdout.write('\n')
 
 
-ob = sorting()
-height = raw_input("Enter height of pyramid")
+ob = Pyramid()
+height = int(input("Enter height of pyramid :- "))
 ob.make_full_pyramid(height)
-print "---------------------------------------"
+print ("---------------------------------------")
 ob.make_pyramid(height)
+print('\n')
