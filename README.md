@@ -1,7 +1,8 @@
 Python_Practice
 ===============
 
-Contains all solution related to basic Python questions
+Contains all solution related to basic Python questions.
+Most of the solutions work both in Python 2.7 as well as in Python 3.
 
 - Pyramid Creation
 - Checking Prime and non-Prime number
