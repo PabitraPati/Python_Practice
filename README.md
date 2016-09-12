@@ -11,3 +11,4 @@ Most of the solutions work both in Python 2.7 as well as in Python 3.
 - Printing cubes of the fibonacci series
 - Insertion Sort
 - Sort Dictionary on the basis of key or value
+- Parse given web stats and findout the URL hit count and response code
