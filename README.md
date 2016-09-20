@@ -12,3 +12,4 @@ Most of the solutions work both in Python 2.7 as well as in Python 3.
 - Insertion Sort
 - Sort Dictionary on the basis of key or value
 - Parse given web stats and findout the URL hit count and response code
+- Checking if given string is Pangram or not 
