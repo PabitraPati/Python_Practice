@@ -31,7 +31,12 @@ def is_pangram(param):
 
     return ret
 
-param = str(input("Enter string to check pangram :-  "))
+try:
+    input = raw_input
+except NameError:
+   pass
+
+param = input("Enter string to check pangram :-  ")
 val = is_pangram(param)
 if val:
     print("Given string is a pangram.")

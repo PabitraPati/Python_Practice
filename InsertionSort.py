@@ -21,13 +21,29 @@ Procedure InsertionSort (List, First, Last)
 EndProcedure
 
 This code works for both Python 2.7 as well as Python 3.4.
-To run this on Python 3.4, you need to uncomment line 42
 
 author :- Pabitra Kumar Pati
 
 """
 
-def insertionSort(mlist):
+def insertionSort(l_input, order='ascending'):
+    '''
+    Recieves the list of comma separated integers and
+    retuns the sorted list in asked order.
+
+    Inputs :-
+    l_input :- comma separated elements (no space in between)
+         e.g. :- 7,3,5,9,1
+    order :- in which order you want the list to be sorted
+         can either be 'descending' or 'ascending'
+         If no order provided, by default, list will be sorted in ascending order.
+    '''
+
+    if order not in [ 'descending', 'ascending' ]:
+        print("Invalid order provided. Please provide 'descending' or 'ascending' as order.")
+        exit()
+    mlist= [int(elem) for elem in l_input.split(',')]
+
     for i in range(1,len(mlist)):
         ptr = i-1               
         while mlist[ptr] > mlist[i] and ptr >= 0:
@@ -35,12 +51,21 @@ def insertionSort(mlist):
             ptr, i = ptr-1, i-1
             # Un-comment the below line to see how insertion sort works
             # print (mlist) 
-    return mlist
+    # Reverse the list if order is 'descending'
+    if order =='descending':
+        mlist.reverse()
+    return mlist, order
+
+try:
+    input = raw_input
+except NameError:
+    pass
 
 l_input = input("Enter your list :- ")
-# Un-comment the below line for Python3
-# l_input= [int(elem) for elem in l_input.split(',')]
 
-op = insertionSort(list(l_input))
-print ("Your sorted list :- %s" %(str(op)))
+op,order = insertionSort(l_input)
+print ("Your sorted list in {} order :- {}".format(order, op))
+
+op,order = insertionSort(l_input, 'descending')
+print ("Your sorted list in {} order :- {}".format(order, op))
 
